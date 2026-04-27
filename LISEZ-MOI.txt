@@ -1,0 +1,40 @@
+┬─┐┌─┐┌─┐┌─┐┌┬┐┌┬┐┌─┐┌─┐  ┌┬┐┌─┐  ┌─┐┌─┐┬─┐┌┬┐┌─┐┌─┐
+├┬┘├┤ │  ├┤  │  │ ├┤ └─┐   ││├┤   ├┤ │ │├┬┘│││├┤ └─┐
+┴└─└─┘└─┘└─┘ ┴  ┴ └─┘└─┘  ─┴┘└─┘  └  └─┘┴└─┴ ┴└─┘└─┘
+guide du template web
+
+Ne pas oublier d'ouvrir tout le DOSSIER dans VScode⋅ium et lancer le "live server" 
+
+----> index.html <-------
+
+- Une <section class="couvertures"> avec le titre dans le <h1>, votre nom dans le <h2> et un court texte d'intention dans des paragraphes <p>
+    - une deuxième de couverture (l'intérieur de couv)
+
+- à la fin du document une autre section 
+
+- Les recettes ou les étapes de la recette :
+
+1) Vous devez écrire la recette/étape dans les div qui ont la class "texte", à la place du faux texte.
+2) coller vos codes dans les différents fichiers "sketch1.js", "sketch2.js"...
+3) vérifier la présence d'une balise <code> avec comme attributs :
+    - "data-p5sketch" avec le nom de fichier .js que vous voulez associer à la recette 
+    - "data-p5target" doit porter l'identifiant unique ("id") de l'élément où le programme va apparaître
+    - "data-p5lazy" (facultatif) permet de lancer le programme avec un "noLoop()" et lancer "loop()" quand on scroll à son niveau
+4) si vous utilisez des fontes, des librairies, des images... n'importe quel fichier externe, il faut aussi les mettre dans ce dossier 
+
+il n'y a rien d'autre à faire, chaque sketch devrait être chargé, écrit dans la page web et exécuté dans la div ciblée. Une checkbox se rajoute pour lancer ou mettre en pause la loop().
+
+/!\ Il ne faut pas que votre sketch contienne de variable nommée "p". 
+
+/!\ Attention, je n'ai pas pu tester le template dans toutes les situations, si vous avez des bugs avec vos Sketches prévenez moi.
+
+Si vous voulez changer des choses dans le style, il faut le faire dans un autre fichier css, "stylePerso.css" par exemple, pour que je puisse mettre à jour la feuille de style commune.
+
+Il faut que le totale de pages, multiplié par 2, soit un multiple de 4 pour former un livret.
+
+Pour rajouter des pages : 
+    - rajouter un fichier .js avec votre sketch dedans
+    - copier/coller une section ".programme" ou ".pageEnPlus" qui fonctionne déjà
+    - Changer l'id de la div ".sketchwrapper" avec un nom unique
+    - Changer la balise code avec le bon data-p5sketch (nom du nouveau fichier sketch) et data-p5target (nom de la nouvelle ID)  
+

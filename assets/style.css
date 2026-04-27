@@ -1,0 +1,459 @@
+/* chargement des police de caractère */
+@font-face {
+    font-family: scorpius;
+    src: url(Scorpius2.otf);
+    size-adjust: 100%;
+}
+
+@font-face {
+    font-family: scorpius-mono;
+    src: url(Scorpius2-mono.otf);
+    size-adjust: 100%;
+}
+
+/* les variables CSS*/
+
+:root {
+    --couleur: blue;
+    --marges: 3rem;
+    --fondperdu: 1mm;
+}
+
+body {
+    margin: 0;
+    font-family: scorpius;
+    font-size: 3rem;
+    /* overflow-x: hidden; */
+}
+
+/* mise en page des couverture */
+
+.couvertures {
+    background-color: var(--couleur);
+    height: 100%;
+}
+
+
+/* motif de bordure généré avec maxbittker.github.io/broider/ */
+
+.couverture,
+header {
+    font-family: scorpius;
+    border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAADT0lEQVR4Xu2c4WLCIAyEq77/I09Hra61bl7PS4DO828IJB9JiFR7GBp/LuWzNOFQPoxJqj6z1paxlPFbJmTHqEBUfdZeNN5AESFSbqAkMDS8OlCUolvk5+LV8ebZuuZevkpNvgvLGLYmI2BIvkugwzAjfQIqHnIIGJLvFOjsloGCCNqS8q/aLKSPIkyVp0eo6mBrfRZwPtBzOSTKKmP3Pi7GHhIGutrS1kDU9fuLUPHUVYGo+s2BLh0Ym5tT8HdzFZCqjwCH11DVYKSP5MhhVR/Nb6BkBhlo8CGZDlRNob3rrwHLKR8L5Fz61BNlU+z6fJ/cOVDeIQMNrmm7B9qbA+uUa20fVa9G41sbjE7Z1vYZaHAJMtDaQB9SqNzBHY7vPDf/+5EFSmFVrj5jYksIjFB2wuhDQgZa+bbLQMGOsQFloNlA2R3pLcVRicj27ylCsxdEDmfLs/37QKDnsVf52bfoh4YfCDT355OH7GdA2Smszh9eAsInDH6koAJD+uH+h09ooLk1BUVIa3l4QLF9pGpAa4BofeQfktOnPJoQGdy7HPmH5AZKXt8ZKJkSCBiSp1+OkP50NxwBXBtsoNm3Teyp311IBRvkCO0NKNoRJA/2p/p0yD8kd9vktik3aFEEXuX3f2AUU9b3qY7Q6AhFO4LiQdVH82fLVfuf9MMn9PWdr++WWSA/Y3KEBgdU9DcjdYN2VzNXJY4+5ZHDBkq2DQb6ukQ4QsmuBGVg+vUdMgBFvCpX12f1DXRv96HTDjf8BfN1/flD95nkW3Y2Ruh8G0AbJDoUkvIvLjPQ/OEpn9enTlHLblA0gGj/YIRGL8juOALYm30GGtyHVwdaavxl8SY1p3xvKXYtIYuX4bE1OboE0RHaJVClLQruQgzUQB9z5Cdlb2nPp7z2J4Z1xsoRWrsEqDVP1UdtnIGSt02NgOZ9VZ0iLG9+BAzJ+47QX/5Orqasql8daO2aihzMBph+KBko2mJRrkZIa33W/fAa6ghlt0AcP0fcdFKzb/mevrsX3eMUC6/0xxXKK1LSg2aJpOpi48IohbPlYjxAdQOFiLgBBsrxgqOrA+3t0IKEyAHtgZKPaaM3hOQFh7cHKt5HokMMEgge8E+Avn9ZEsxz+AY2e9dxuf1zVwAAAABJRU5ErkJggg==") 28 / 28px / 0 round;
+    border-width: 28px;
+    border-style: solid;
+    text-align: center;
+    font-size: 3.2rem;
+    image-rendering: pixelated;
+}
+
+.couvertures .couverture {
+    color: white;
+}
+
+.couverture header,
+.couverture footer,
+h1 {
+    margin: 28px;
+}
+
+.couverture h1 {
+    font-size: 6.5rem;
+}
+
+.couverture h2 {
+    margin-top: 0;
+    font-size: 3.2rem;
+}
+
+.couverture {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.couverture p {
+    margin: 0;
+}
+
+.couverture footer {
+    margin-top: auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: scorpius;
+    font-weight: normal;
+}
+
+.recette h2 {
+    margin: 0;
+}
+
+header {
+    margin: 28px;
+}
+
+/* mise en page du contenu */
+/* "programme" = combinaison texte + programme (double page classique) */
+.programme {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.programme>* {
+    flex: 1 1;
+}
+
+code {
+    white-space: pre;
+    font-family: scorpius-mono;
+    /* display: none; */
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+code .code_comment {
+    font-family: scorpius;
+}
+
+.sketchwrapper {
+    margin: auto;
+    position: relative; /* pour que l'interface générée par P5 en position absolue soit collée aux canvas */
+    display: flex;
+}
+
+canvas {
+    max-height: 100vh;
+    width: auto !important; /* forcer le redimensionnement du canvas autre que celui donné par p5 */
+    margin: auto;
+    cursor: pointer;
+}
+.recette{
+    height: 100%;
+    margin: var(--marges); /* les marges sont données ici et pas par paged pour faciliter les canvas en pleine page*/
+}
+
+/* texte des recette */
+
+
+.texte {
+    /* max-width: calc(50vw - var(--marges)*2); */
+}
+
+.programme h2 {
+    margin-right: 1rem;
+    /* float: left; */
+}
+
+.programme code {
+    display: none;
+}
+
+/* quand on clique sur le bouton code */
+.code code {
+    display: block;
+}
+
+.code .texte{
+    display: none;
+}
+
+input{
+    filter: invert(100);
+}
+
+button {
+    background-color: var(--couleur);
+    filter: invert(100);
+    font-family: inherit;
+}
+
+.buttonCode{
+    color: white;
+    filter:invert(100);
+    /* mix-blend-mode: difference; */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* mise en page du colophon */
+
+.pagedjs_page_content main:has(> #colophon){
+    display: flex; /*hack pour paged*/
+}
+#colophon{
+    margin: var(--marges);
+    margin-top: auto;
+    /* width: 50%; */
+    /* margin-bottom: 0; */
+    font-size: 1.7rem;
+}
+#colophon code{
+    display: block;
+    font-size: 1.7rem;
+    line-height: 1.7rem;
+}
+
+/* .pageEnPlus {
+    display: flex;
+} */
+
+/* interface */
+
+.p5_play_pause{
+    accent-color: var(--couleur);
+    width: 1.5rem;
+    height: 1.5rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+.p5_play_pause input{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen {
+    .couverture {
+        height: 100vh;
+    }
+
+
+    .couverture header,
+    .couverture footer,
+    h1 {
+        margin: 56px;
+    }
+
+    .couverture footer{
+        margin-top: auto;
+    }
+
+
+    .print_interface{
+        position: absolute!important;
+    }
+
+    .firstPage {
+        display: none;
+    }
+
+    .programme, .pageEnPlus {
+        position: relative;
+        margin-bottom: 28px;
+        box-shadow: 0px 14px 14px var(--couleur);
+    }
+
+    body nav.print_interface{
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        clip-path: polygon(100% 50%,88.52% 56.1%,97.55% 65.45%,84.75% 67.71%,90.45% 79.39%,77.58% 77.58%,79.39% 90.45%,67.71% 84.75%,65.45% 97.55%,56.1% 88.52%,50% 100%,43.9% 88.52%,34.55% 97.55%,32.29% 84.75%,20.61% 90.45%,22.42% 77.58%,9.55% 79.39%,15.25% 67.71%,2.45% 65.45%,11.48% 56.1%,0% 50%,11.48% 43.9%,2.45% 34.55%,15.25% 32.29%,9.55% 20.61%,22.42% 22.42%,20.61% 9.55%,32.29% 15.25%,34.55% 2.45%,43.9% 11.48%,50% 0%,56.1% 11.48%,65.45% 2.45%,67.71% 15.25%,79.39% 9.55%,77.58% 22.42%,90.45% 20.61%,84.75% 32.29%,97.55% 34.55%,88.52% 43.9%);
+        border-radius: unset;
+        padding: 4rem;
+        /* padding-top: 6rem; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transform: rotate(-15deg);
+     }
+
+     #colophon{
+        text-align: center;
+        font-size: 3rem;
+     }
+}
+
+@media print {
+  
+    html {
+        margin: 0;
+    }
+    .couvertures {
+        /* page: couvertures; */
+    }
+    .recette{
+        page: recette;
+    }
+
+    @page {
+        /* size: 297mm 210mm; */
+        size: A5;
+        margin: 0;
+    }
+    /* @page recette{
+        margin: var(--marges);
+    } */
+
+    body {
+        font-size: 1.7rem;
+        margin: 0;
+        padding: 0;
+    }
+    main{
+        height: 100%;
+    }
+    
+    .printcover{
+        /* this is added by js because it doesn't work*/
+        /* @page{ 
+            size: A4 landscape;
+            bleed:5mm;
+        } */
+    }   
+ 
+    code {
+        display: none;
+    }
+
+    .couvertures {
+        /* padding-top: var(--fondperdu);
+        padding-bottom: var(--fondperdu);
+        padding-right: var(--fondperdu);
+        padding-right: var(--fondperdu); */
+
+    }
+
+    .couverture {
+        /* height: calc(210mm - var(--fondperdu)*2 - 0.1px);
+        width: calc(50% - var(--fondperdu)); */
+        /* margin-left: auto; */
+        box-sizing: border-box;
+        font-size: 1.5rem;
+    }
+
+    .couverture h1{
+        font-size: 2rem;
+    }
+
+    .couverture header,.couverture h2  {
+        font-size: 1.8rem;
+    }
+
+    
+    .deuxiemecouv{
+        page-break-before: always;
+        /* page-break-after: always; */
+    }
+
+    .firstPage {
+        /* color: black; */
+        color: white;
+        /* margin-left: auto; */
+        /* width: 50%; */
+        height: 100%;
+        display: flex;
+        /* border-color: unset; */
+        /* border-image: unset !important; */
+        /* background-color: white; */
+        /* background-color: black; */
+        filter: grayscale(100) contrast(100) invert(100);
+        /* border-style: none; */
+        /* padding: 28px; */
+    }
+
+    /* .firstPage header,.firstPage.couverture {
+        border-image: unset !important;
+        border-style: none;
+        padding: 28px;
+    } */
+
+    canvas,
+    iframe {
+        /* max-height: 210mm; */
+        /* max-width: calc(297mm / 2); */
+        image-resolution: 300dpi;
+        margin: auto;
+        height: auto !important;
+    }
+
+    .texte {
+        max-width: calc(297mm / 2 - var(--marges)*2);
+    }
+
+    .programme {
+        margin: 0;
+    }
+
+    /* .programme {
+        max-width: calc(297mm / 2);
+    } */
+
+    canvas {
+        /* max-height: 210mm;
+        max-width: calc(297mm / 2); */
+        /* width: auto !important; */
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    button,.p5_play_pause {
+        display: none;
+    }
+
+    
+    .page{
+        page-break-before: always;
+    }
+
+     .print_interface{
+        display: none;
+    }
+}
+
+
+/* les règles visibles dans la préview de Paged mais pas à l'impression */
+@media screen,
+pagedjs-ignore {
+      .print_interface{
+        aspect-ratio: 1;
+        /* position: fixed!important; */
+        top: 0;
+        left: 0;
+        background-color: var(--couleur);
+        filter:invert(100%);
+        padding: 2.5rem;
+        padding-left: 1rem;
+        padding-top: 1rem;
+        font-size: 1.5rem;
+        z-index: 99;
+        aspect-ratio: 1;
+        border-radius: 0 0 100% 0%;
+      }
+
+      .p5_play_pause{
+        position: absolute;
+      }
+      .p5_play_pause input{
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      .print_interface li{
+        list-style: none;
+        line-height: 1.8rem;
+      }
+      .print_interface a:hover{
+        font-style: italic;
+      }
+      .print_interface a,
+      .print_interface a:visited{
+        color: black;
+        filter:invert(100%);
+        text-decoration: none;
+      }
+      .print_interface a.current{
+        text-decoration: underline;
+      }
+       .print_interface p{
+        filter:invert(100%);
+        margin: 0;
+       }
+      
+}

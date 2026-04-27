@@ -1,0 +1,28 @@
+/* couleur de la couverture */
+
+:root{
+    --couleur: blue;
+}
+
+/* motif de bordure généré avec maxbittker.github.io/broider/ */
+
+.couverture,
+header {
+    border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAADT0lEQVR4Xu2c4WLCIAyEq77/I09Hra61bl7PS4DO828IJB9JiFR7GBp/LuWzNOFQPoxJqj6z1paxlPFbJmTHqEBUfdZeNN5AESFSbqAkMDS8OlCUolvk5+LV8ebZuuZevkpNvgvLGLYmI2BIvkugwzAjfQIqHnIIGJLvFOjsloGCCNqS8q/aLKSPIkyVp0eo6mBrfRZwPtBzOSTKKmP3Pi7GHhIGutrS1kDU9fuLUPHUVYGo+s2BLh0Ym5tT8HdzFZCqjwCH11DVYKSP5MhhVR/Nb6BkBhlo8CGZDlRNob3rrwHLKR8L5Fz61BNlU+z6fJ/cOVDeIQMNrmm7B9qbA+uUa20fVa9G41sbjE7Z1vYZaHAJMtDaQB9SqNzBHY7vPDf/+5EFSmFVrj5jYksIjFB2wuhDQgZa+bbLQMGOsQFloNlA2R3pLcVRicj27ylCsxdEDmfLs/37QKDnsVf52bfoh4YfCDT355OH7GdA2Smszh9eAsInDH6koAJD+uH+h09ooLk1BUVIa3l4QLF9pGpAa4BofeQfktOnPJoQGdy7HPmH5AZKXt8ZKJkSCBiSp1+OkP50NxwBXBtsoNm3Teyp311IBRvkCO0NKNoRJA/2p/p0yD8kd9vktik3aFEEXuX3f2AUU9b3qY7Q6AhFO4LiQdVH82fLVfuf9MMn9PWdr++WWSA/Y3KEBgdU9DcjdYN2VzNXJY4+5ZHDBkq2DQb6ukQ4QsmuBGVg+vUdMgBFvCpX12f1DXRv96HTDjf8BfN1/flD95nkW3Y2Ruh8G0AbJDoUkvIvLjPQ/OEpn9enTlHLblA0gGj/YIRGL8juOALYm30GGtyHVwdaavxl8SY1p3xvKXYtIYuX4bE1OboE0RHaJVClLQruQgzUQB9z5Cdlb2nPp7z2J4Z1xsoRWrsEqDVP1UdtnIGSt02NgOZ9VZ0iLG9+BAzJ+47QX/5Orqasql8daO2aihzMBph+KBko2mJRrkZIa33W/fAa6ghlt0AcP0fcdFKzb/mevrsX3eMUC6/0xxXKK1LSg2aJpOpi48IohbPlYjxAdQOFiLgBBsrxgqOrA+3t0IKEyAHtgZKPaaM3hOQFh7cHKt5HokMMEgge8E+Avn9ZEsxz+AY2e9dxuf1zVwAAAABJRU5ErkJggg==") 28 / 28px / 0 round;
+    border-width: 28px;
+    border-style: solid;
+}
+
+/* interface chemin de fer*/
+
+@media screen,
+pagedjs-ignore {
+    .pagedjs_pages{
+        width: calc(2rem + var(--pagedjs-width) * 4)!important;  
+    }
+
+    .pagedjs_left_page{
+
+        margin-left: 1rem !important;
+    }
+}
