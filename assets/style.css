@@ -23,6 +23,7 @@ body {
     margin: 0;
     font-family: scorpius;
     font-size: 3rem;
+    line-height: 110%;
     /* overflow-x: hidden; */
 }
 
@@ -295,6 +296,7 @@ button {
         font-size: 1.7rem;
         margin: 0;
         padding: 0;
+        line-height: 1.9rem;
     }
     main{
         height: 100%;
@@ -337,8 +339,9 @@ button {
     }
 
     
-    .deuxiemecouv{
-        page-break-before: always;
+    .deuxiemecouv,.troisiemecouv{
+        /* break-before: avoid; */
+        /* page-break-before: always; */
         /* page-break-after: always; */
     }
 
@@ -380,6 +383,11 @@ button {
     .programme {
         margin: 0;
     }
+    .programme h2,.programme h3, .programme p{
+        margin-top: 1.9rem;
+        margin-bottom: 1.9rem;
+
+    }
 
     /* .programme {
         max-width: calc(297mm / 2);
@@ -397,9 +405,8 @@ button {
         display: none;
     }
 
-    
     .page{
-        page-break-before: always;
+        break-before: page;
     }
 
      .print_interface{

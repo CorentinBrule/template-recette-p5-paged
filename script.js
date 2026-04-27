@@ -51,7 +51,7 @@ if (window.location.search.includes("print")){
     /* génère l'interface d'impression */
     afterPreview(pages){
         if (window.location.search.includes("cover")){
-            document.body.innerHTML+='<link rel="stylesheet" href="printcover.css" />';
+            document.body.innerHTML+='<link rel="stylesheet" href="assets/printcover.css" />';
         }
         printInterface(pages)
     }

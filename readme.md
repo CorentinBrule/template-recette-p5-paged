@@ -21,3 +21,4 @@ All of this may therefore not work for a complex project, or with unusual or obf
 ## knowed bugs :
 
 - sync issue between P5 x Paged recurring with Safari.
+- some bad page break for cover on Chrome. 
