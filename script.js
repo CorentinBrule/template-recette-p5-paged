@@ -13,7 +13,7 @@ global_script_count = 0
 
 /*config Paged*/
 if (window.location.search.includes("print")){
-    
+
     class MyHandler extends Paged.Handler {
     constructor(chunker, polisher, caller) {
         super(chunker, polisher, caller);
@@ -44,9 +44,13 @@ if (window.location.search.includes("print")){
         }
         
     }
-    afterPageLayout(pageElement, page, breakToken){
+    finalizePage(pageElement, page, breakToken){
         /* converti les scripts p5 et intègre le code dans les recettes avant la mise en livre */
+         setTimeout(function(){
         p5ing(pageElement);
+
+    }, 1000);
+        
     }
     /* génère l'interface d'impression */
     afterPreview(pages){
@@ -160,7 +164,7 @@ window.setTimeout((e)=>{ // attendre 1 seconde, à défaut d'avoir une promesse 
             e.currentTarget.dataset["lazy"] = "false"
         })
     }
-}, 1000)
+}, 2000)
 
 function check_sketches_visibility(buttons){
     let scrollY = window.scrollY;
@@ -170,7 +174,11 @@ function check_sketches_visibility(buttons){
             if(button.dataset["play"] == "false" && button.dataset["lazy"] == "true"){
                 button.querySelector("input").click(); // click() ne trigger pas mouseClicked() de p5 donc utiliser une checkbox et changed() de p5
             }
-        }
+        }//else{
+         //   if(button.dataset["play"] == "true"){
+         //       button.querySelector("input").click(); // click() ne trigger pas mouseClicked() de p5 donc utiliser une checkbox et changed() de p5
+         //   }
+        //}
     }
 }
 
