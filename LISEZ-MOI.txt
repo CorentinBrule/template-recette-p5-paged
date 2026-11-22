@@ -5,6 +5,8 @@ guide du template web
 
 Ne pas oublier d'ouvrir tout le DOSSIER dans VScode⋅ium et lancer le "live server" 
 
+## Le Livret
+
 ----> index.html <-------
 
 - Une <section class="couvertures"> avec le titre dans le <h1>, votre nom dans le <h2> et un court texte d'intention dans des paragraphes <p>
@@ -20,11 +22,10 @@ Ne pas oublier d'ouvrir tout le DOSSIER dans VScode⋅ium et lancer le "live ser
     - "data-p5sketch" avec le nom de fichier .js que vous voulez associer à la recette 
     - "data-p5target" doit porter l'identifiant unique ("id") de l'élément où le programme va apparaître
     - "data-p5lazy" (facultatif) permet de lancer le programme avec un "noLoop()" et lancer "loop()" quand on scroll à son niveau
+    - "data-printwidth" et "data-printheight" (facultatif) pour définir une taille spécifiquement pour l'impression
 4) si vous utilisez des fontes, des librairies, des images... n'importe quel fichier externe, il faut aussi les mettre dans ce dossier 
 
 il n'y a rien d'autre à faire, chaque sketch devrait être chargé, écrit dans la page web et exécuté dans la div ciblée. Une checkbox se rajoute pour lancer ou mettre en pause la loop().
-
-/!\ Il ne faut pas que votre sketch contienne de variable nommée "p". 
 
 /!\ Attention, je n'ai pas pu tester le template dans toutes les situations, si vous avez des bugs avec vos Sketches prévenez moi.
 
@@ -38,3 +39,4 @@ Pour rajouter des pages :
     - Changer l'id de la div ".sketchwrapper" avec un nom unique
     - Changer la balise code avec le bon data-p5sketch (nom du nouveau fichier sketch) et data-p5target (nom de la nouvelle ID)  
 
+## Le poster
