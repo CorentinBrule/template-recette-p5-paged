@@ -6,12 +6,12 @@ var vitesseY;
 var fonte;
 var bbox; 
 
-function preload() {
-    fonte = loadFont("../assets/Scorpius2.otf")
-}
 
-function setup() {
+async function setup() {
+    fonte = await loadFont("../assets/Scorpius2.otf");
+
     createCanvas(windowWidth, windowHeight);
+
     // position de départ
     x = random(width/4, width/4 * 3);
     y = random(height/4, height/4 * 3);
