@@ -6,7 +6,7 @@ Ce template permet de réunir plusieurs sketches P5.js dans une seule page web i
 
 Attention, les script ne sont pas parsés, mais un simple recherché/remplacé est effectué à l'aide d'expressions régulières et de la liste des fonctions et constantes décrites dans la référence de p5.
 
-Tout ceci peut donc ne pas marcher pour un projet complexe, une syntaxe atypique ou obfusquée. Ne pas utiliser de variable nommée "p" dans vos sketchs.
+Tout ceci peut donc ne pas marcher pour un projet complexe, une syntaxe atypique ou obfusquée. Ne pas utiliser de variable nommée "wp5" dans vos sketchs.
 
 ## en: 
 
@@ -14,11 +14,11 @@ This template allows you to combine several P5.js sketches into a single printab
 
 Please note that scripts are not parsed; instead, a simple search-and-replace operation is performed using regular expressions and the list of functions and constants described in the p5 reference.
 
-All of this may therefore not work for a complex project, or with unusual or obfuscated syntax.  Do not use a variable named ‘p’ in your sketches.
+All of this may therefore not work for a complex project, or with unusual or obfuscated syntax.  Do not use a variable named ‘wp5’ in your sketches.
 
 --------------
 
 ## knowed bugs :
 
-- sync issue between P5 x Paged recurring with Safari.
-- some bad page break for cover on Chrome. 
+- sync issue between P5 x Paged recurring with Safari and/or Mac Silicon
+- some bad page break for cover on Chrome.
